@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +15,20 @@
             font-family: 'Orbitron', sans-serif;
         }
         .explosion {
-            height: 100vh;
-            animation: explode 1s ease-out;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #ff5722, #ff9800, transparent);
+            opacity: 0;
+            z-index: 9999;
+            animation: explode 2s ease-out forwards;
         }
         @keyframes explode {
-            0% { transform: scale(0); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% { transform: scale(0); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.8; }
+            100% { transform: scale(2); opacity: 0; }
         }
         .glassmorphism {
             background: rgba(255, 255, 255, 0.1);
@@ -29,46 +37,62 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
-    <div class="explosion d-flex justify-content-center align-items-center">
-        <h1 class="display-1">ORDIGNO NIGHT</h1>
-    </div>
+    <div class="explosion"></div>
     
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="https://via.placeholder.com/800x400" alt="Placeholder Image" class="img-fluid mb-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquam tincidunt, nisl nunc tincidunt urna, nec tincidunt nunc nunc id nunc.</p>
+    <div class="content">
+        <div class="container my-5">
+            <h1 class="text-center display-1 mb-5">ORDIGNO NIGHT</h1>
+            
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <img src="https://via.placeholder.com/1200x600" alt="Ordigno Night" class="img-fluid mb-4">
+                </div>
             </div>
-            <div class="col-md-6">
-                <img src="https://via.placeholder.com/800x400" alt="Another Placeholder Image" class="img-fluid mb-4">
-                <p>Praesent euismod, nunc id aliquam tincidunt, nisl nunc tincidunt urna, nec tincidunt nunc nunc id nunc.</p>
+            
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="glassmorphism">
+                        <h2 class="mb-4">Cos'è Ordigno Night?</h2>
+                        <p>
+                            Ordigno Night è una realtà brianzola che cerca di portare uno spazio sociale anche in Brianza. 
+                            Nata dalla passione e dall'impegno di un gruppo di giovani del territorio, Ordigno Night si propone 
+                            come un punto di riferimento per la cultura alternativa e l'aggregazione sociale. Attraverso eventi, 
+                            concerti, dibattiti e attività creative, miriamo a creare un ambiente inclusivo e stimolante, 
+                            dove le persone possano incontrarsi, esprimersi e condividere esperienze in un contesto libero e aperto.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <div class="row mt-5">
-            <div class="col-md-8 mx-auto">
-                <form class="glassmorphism">
-                    <h2 class="mb-4">Iscrizione Ordigno Night</h2>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Nome" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Cognome" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Codice Fiscale" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="date" class="form-control" placeholder="Data di Nascita" required>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Luogo di Nascita" required>
-                    </div>
-                    <button type="submit" class="btn btn-light">Invia</button>
-                </form>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <form class="glassmorphism">
+                        <h2 class="mb-4">Iscrizione Ordigno Night</h2>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Cognome" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Codice Fiscale" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="date" class="form-control" placeholder="Data di Nascita" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Luogo di Nascita" required>
+                        </div>
+                        <button type="submit" class="btn btn-light">Invia</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
