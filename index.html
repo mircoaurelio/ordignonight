@@ -9,8 +9,8 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-          body {
-        background: linear-gradient(45deg, #000000, #333333);
+        body {
+        background: linear-gradient(45deg, #000000, #6b6b6b, #c5c5c5);
         background-size: 400% 400%;
         animation: gradientMorph 15s ease infinite;
         color: #fff;
@@ -19,9 +19,12 @@
 
     @keyframes gradientMorph {
         0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        25% { background-position: 100% 50%; }
+        50% { background-position: 50% 100%; }
+        75% { background-position: 0% 50%; }
+        100% { background-position: 50% 0%; }
     }
+
 
         .explosion {
             position: fixed;
@@ -63,19 +66,10 @@
         @keyframes blink {
             0%, 100% { opacity: 0; }
             50% { opacity: 1; }
-        }  body {
-        background: linear-gradient(45deg, #000000, #333333);
-        background-size: 400% 400%;
-        animation: gradientAnimation 15s ease infinite;
-        color: #fff;
-        font-family: 'Orbitron', sans-serif;
-    }
+        }   
+   
 
-    @keyframes gradientAnimation {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+ 
  
 
     .scroll-arrow {
